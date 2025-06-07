@@ -79,7 +79,7 @@ const App = () => {
               imageModerator={"images/speaker-white.png"}
               nameNarsum = {"Suripno, S.T.,M.Pd."}
               nameModerator = {"MAWADAH"}
-              nameMC = {"ZAHRA TAZKIA"}
+              nameMC = {"FETI FAJRIYANTI"}
             />
           }
         />
