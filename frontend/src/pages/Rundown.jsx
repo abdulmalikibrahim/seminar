@@ -43,104 +43,42 @@ const Index = () => {
                 <div className='col-lg-9'>
                     <table className='table table-sm table-borderless table-hover'>
                         <thead className='thead-light'>
-                            <tr className='text-center' style={{fontSize:"9pt"}}>
-                                <th className='pt-3 pb-3 align-middle bg-orange text-light'>No</th>
-                                <th className='pt-3 pb-3 align-middle bg-orange text-light'>Jam</th>
-                                <th className='pt-3 pb-3 align-middle bg-orange text-light' style={{minWidth:"100px"}}>Durasi</th>
-                                <th className='pt-3 pb-3 align-middle bg-orange text-light'>Isi Acara</th>
-                                <th className='pt-3 pb-3 align-middle bg-orange text-light'>Keterangan</th>
+                            <tr className='text-center' style={{ fontSize: "9pt" }}>
+                            <th className='pt-3 pb-3 align-middle bg-orange text-light'>No</th>
+                            <th className='pt-3 pb-3 align-middle bg-orange text-light'>Jam</th>
+                            <th className='pt-3 pb-3 align-middle bg-orange text-light' style={{ minWidth: "100px" }}>Durasi</th>
+                            <th className='pt-3 pb-3 align-middle bg-orange text-light'>Kegiatan</th>
+                            <th className='pt-3 pb-3 align-middle bg-orange text-light'>Penanggung Jawab</th>
+                            <th className='pt-3 pb-3 align-middle bg-orange text-light'>Keterangan</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>30 Menit</td>
-                                <td className='bg-orange-soft text-start'>Persiapan Acara</td>
-                                <td className='bg-orange-soft align-middle' rowSpan={2}>Panitia</td>
+                            {[
+                            ["08:30 - 09:00", "30 Menit", "Persiapan Acara", "Operator", "Menyiapkan link Zoom Meeting, tes audio, share screen, dan memastikan teknis siap"],
+                            ["09:00 - 09:10", "10 Menit", "Peserta Memasuki Zoom Meet", "Operator", "Memutar musik pembuka dan menyapa peserta yang masuk"],
+                            ["09:10 - 09:15", "5 Menit", "Pembukaan Acara", "MC", "Memberi salam pembuka dan menjelaskan alur acara"],
+                            ["09:15 - 09:20", "5 Menit", "Pembacaan Doa Pembuka", "MC", "Doa Lintas Agama"],
+                            ["09:20 - 09:25", "5 Menit", "Menyanyikan Lagu Indonesia Raya & Mars UPB", "Operator", "Share screen video lagu, memastikan audio dan partisipasi peserta"],
+                            ["09:25 - 09:30", "5 Menit", "Sambutan Ketua Pelaksana", "Fahri Al Zakwan", "Memberikan sambutan singkat atas nama panitia"],
+                            ["09:30 - 09:40", "10 Menit", "Sambutan Dosen Fisika", "Bpk. Muhammad Makmun Effendi, S.Kom., M.Kom.", "Memberikan sambutan resmi dan dukungan akademik"],
+                            ["09:40 - 09:45", "5 Menit", "Penutupan Opening Ceremony", "MC", "Menyimpulkan sesi pembuka, alihkan ke sesi materi"],
+                            ["09:45 - 09:50", "5 Menit", "Pembukaan Sesi Materi", "MC", "Perkenalan singkat, pengantar menuju sesi inti"],
+                            ["09:50 - 09:55", "5 Menit", "Pembacaan CV Moderator", "MC", "Membacakan profil moderator lalu menyerahkan ke moderator"],
+                            ["09:55 - 10:00", "5 Menit", "Pembukaan Moderator & Pembacaan CV Pemateri", "Moderator", "Menyambut peserta dan mengenalkan pemateri"],
+                            ["10:00 - 10:50", "50 Menit", "Pemaparan Materi", "Bpk. Suripno, S.T., M.Pd.", "Menyampaikan materi utama seminar secara interaktif"],
+                            ["10:50 - 11:00", "10 Menit", "Sesi Tanya Jawab (Q&A)", "Moderator, Pemateri, dan Peserta", "Moderator memandu sesi tanya jawab interaktif dari peserta"],
+                            ["11:00 - 11:05", "5 Menit", "Pembacaan Doa Penutup", "Silvie Fadhlia Aghata", "Menutup acara secara spiritual dengan doa singkat"],
+                            ["11:05 - 11:10", "5 Menit", "Penutupan Akhir, Presensi, dan Dokumentasi Peserta", "Seluruh Panitia dan Peserta", "MC umumkan link presensi, panitia ambil dokumentasi akhir via Zoom"]
+                            ].map(([jam, durasi, kegiatan, penanggungJawab, keterangan], index) => (
+                            <tr key={index} style={{ fontSize: "9pt" }} className='align-middle table-light text-center'>
+                                <td className='bg-orange-soft'>{index + 1}</td>
+                                <td className='bg-orange-soft'>{jam}</td>
+                                <td className='bg-orange-soft'>{durasi}</td>
+                                <td className='bg-orange-soft text-start'>{kegiatan}</td>
+                                <td className='bg-orange-soft'>{penanggungJawab}</td>
+                                <td className='bg-orange-soft align-middle text-start'>{keterangan}</td>
                             </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>20 Menit</td>
-                                <td className='bg-orange-soft text-start'>Peserta memasuki Zoom Meet</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Pembukaan</td>
-                                <td className='bg-orange-soft align-middle' rowSpan={2}>MC</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Pembukaan Ayat Suci Al-Quran dan Pembacaan Do'a</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Menyanyikan lagu Indonesia Raya dan Mars UPB</td>
-                                <td className='bg-orange-soft'>Panitia</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Sambutan Ketua Pelaksana</td>
-                                <td className='bg-orange-soft'>Ketua Panitia</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>10 Menit</td>
-                                <td className='bg-orange-soft text-start'>Sambutan Dosen Kalkulus</td>
-                                <td className='bg-orange-soft'>Dosen Pengampu</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Pembukaan CV Moderator</td>
-                                <td className='bg-orange-soft'>MC</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Pembukaan Moderator dan Pembacaan CV Pemateri</td>
-                                <td className='bg-orange-soft'>Moderator</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>50 Menit</td>
-                                <td className='bg-orange-soft text-start'>Pemaparan Materi</td>
-                                <td className='bg-orange-soft'>Pemateri</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>10 Menit</td>
-                                <td className='bg-orange-soft text-start'>Sesi QnA</td>
-                                <td className='bg-orange-soft'>Moderator, Pemateri & Peserta</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Penutupan dan penyerahan sertifikat secara simbolis kepada pemateri oleh moderator sekaligus dokumentasi</td>
-                                <td className='bg-orange-soft'>Moderator & Pemateri</td>
-                            </tr>
-                            <tr style={{fontSize:"9pt"}} className='align-middle table-light text-center'>
-                                <td className='bg-orange-soft'>{nomor++}</td>
-                                <td className='bg-orange-soft'></td>
-                                <td className='bg-orange-soft'>5 Menit</td>
-                                <td className='bg-orange-soft text-start'>Penutupan, Sesi Dokumentasi dan Presensi Peserta</td>
-                                <td className='bg-orange-soft'>Seluruh Panitia & Peserta</td>
-                            </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
